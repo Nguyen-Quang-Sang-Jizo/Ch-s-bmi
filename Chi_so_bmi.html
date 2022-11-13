@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chỉ số bmi</title>
+</head>
+<body>
+<h1>Tính chỉ số cân nặng</h1>
+<table>
+    <tr>
+        <td>Cân nặng (kg)</td>
+        <td>
+            <label><input id="weight" type="text"></label>
+        </td>
+    </tr>
+    <tr>
+        <td>Chiều cao (m)</td>
+        <td>
+            <label><input id="height" type="text"></label>
+        </td>
+    </tr>
+</table>
+<button onclick="tinh()">Kiểm tra</button>
+<script>
+    function tinh(){
+        let can = +document.getElementById('weight').value;
+        let cao = +document.getElementById('height').value;
+        let bmii = can / ( cao ^ 2 );
+        if (bmii < 18.5 ){
+            alert("Underweight");
+        }
+        else if (bmii >=18.5 && bmii < 25.0){
+            alert("Normal");
+        }
+        else if (bmii >= 25.0 && bmii < 30.0){
+            alert("Overweight");
+        }
+        else{
+            alert("Obese");
+        }
+    }
+</script>
+</body>
+</html>
